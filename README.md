@@ -95,6 +95,20 @@ cd tests
 python -m unittest discover
 ```
 
+## Visualization
+
+### Correlation of the dataset
+
+![Correlation of the Dataset](../KAIM-W4/outputs/corr_all_data.png)
+
+### Store Types
+
+![Store Types](../KAIM-W4/outputs/store_type.png)
+
+### Sales on Holidays
+
+![Sales on Holidays](../KAIM-W4/outputs/sales_on_state_holidays.png)
+
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
