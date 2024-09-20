@@ -1,5 +1,4 @@
-# KAIM Weak 4 Challenge Task 1
-
+# KAIM Weak 4 Challenge
 
 ## Exploratory Data Analysis on Customer Purchasing Behavior
 
