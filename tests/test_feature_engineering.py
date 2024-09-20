@@ -2,14 +2,21 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-import pytest
-from feature_engineering import extract_features
+import unittest
+import pandas as pd
+from feature_engineering import encode_features
 
-def test_extract_features():
-    data = pd.DataFrame({
-        'Date': ['2024-09-01', '2024-09-02', '2024-09-03']
-    })
-    
-    data_with_features = extract_features(data)
-    assert 'Month' in data_with_features.columns
-    assert 'DayOfWeek' in data_with_features.columns
+class TestFeatureEngineering(unittest.TestCase):
+    def setUp(self):
+        self.df = pd.DataFrame({
+            'StoreType': ['a', 'b', 'c'],
+            'Assortment': ['x', 'y', None],
+            'PromoInterval': [None, 'Jan', 'Feb'],
+        })
+
+    def test_encode_features(self):
+        df_encoded = encode_features(self.df)
+        self.assertIn('StoreType', df_encoded.columns)
+
+if __name__ == "__main__":
+    unittest.main()

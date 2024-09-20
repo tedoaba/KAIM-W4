@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 import pytest
-from eda import explore_data
+from eda import data_overview
 
 def test_explore_data():
     data = pd.DataFrame({
@@ -11,5 +11,5 @@ def test_explore_data():
         'Sales': [100, 200, 300]
     })
     
-    explore_data(data)
-    assert True  # Simple check to ensure function runs without error
+    data_overview(data)
+    assert True
