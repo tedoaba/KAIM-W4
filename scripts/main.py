@@ -2,33 +2,29 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from data_loader import load_data, clean_data
-from feature_engineering import extract_features
-from eda import explore_data
 from utils import setup_logging
-
+from data_loader import load_data
+from feature_engineering import handle_missing_values, encode_features
+from eda import data_overview, plot_store_type_distribution, plot_assortment_distribution, plot_competition_distance_distribution, plot_promo2_distribution, plot_competition_distance_by_assortment, plot_correlation_matrix
 
 def main():
-    # Setup logging
-    log_file = os.path.join("../logs", "eda.log")
-    setup_logging(log_file)
-
-    # Filepath to dataset
-    file_path = os.path.join("../data", "store.csv")
+    setup_logging()
+    file_path = '../data/store.csv'
+    store_data = load_data(file_path)
     
-    # Step 1: Load the data
-    data = load_data(file_path)
+    data_overview(store_data)
+    store_data = handle_missing_values(store_data)
+    store_data = encode_features(store_data)
     
-    # Step 2: Preprocess the data (missing values, outliers, etc.)
-    cleaned_data = clean_data(data)
+    # Call the plotting functions
+    plot_store_type_distribution(store_data)
+    plot_assortment_distribution(store_data)
+    plot_competition_distance_distribution(store_data)
+    plot_promo2_distribution(store_data)
+    plot_competition_distance_by_assortment(store_data)
+    plot_correlation_matrix(store_data)
     
-    # Step 3: Feature Engineering
-    #data_with_features = extract_features(cleaned_data)
-    
-    # Step 4: Exploratory Data Analysis
-    #explore_data(data_with_features)
-    
-    print("Data preprocessing, feature engineering, and EDA completed successfully.")
+    print("EDA Completed!")
 
 if __name__ == "__main__":
     main()
