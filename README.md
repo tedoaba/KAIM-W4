@@ -28,3 +28,27 @@
 ├── requirements.txt              # Project dependencies
 ├── README.md                     # Project documentation
 ```
+
+## Folder Structure
+
+- `src/`: Contains source code for data loading, feature engineering, and EDA.
+- `tests/`: Contains unit and integration tests.
+- `data/`: Contains raw and processed data files.
+- `logs/`: Contains logging output.
+- `.github/`: Contains CI/CD configurations.
+
+### Running the Analysis
+
+To run the analysis, execute:
+
+```bash
+python scripts/main.py
+```
+
+### Running the tests
+
+To run the analysis, execute:
+
+```bash
+python -m unittest discover -s tests
+```
