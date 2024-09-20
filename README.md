@@ -99,15 +99,15 @@ python -m unittest discover
 
 ### Correlation of the dataset
 
-![Correlation of the Dataset](../KAIM-W4/outputs/corr_all_data.png)
+![Correlation of the Dataset](outputs/corr_all_data.png)
 
 ### Store Types
 
-![Store Types](../KAIM-W4/outputs/store_type.png)
+![Store Types](outputs/store_type.png)
 
 ### Sales on Holidays
 
-![Sales on Holidays](../KAIM-W4/outputs/sales_on_state_holidays.png)
+![Sales on Holidays](outputs/sales_on_state_holidays.png)
 
 ## Contributing
 
