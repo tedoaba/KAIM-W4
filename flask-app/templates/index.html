@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <title>Input Form</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <h1 class="text-2xl font-bold text-center mb-5">Enter Your Details</h1>
+        <form action="/" method="POST" class="max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="age" class="block text-gray-700 text-sm font-bold mb-2">Age:</label>
+                <input type="number" id="age" name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+            </div>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="mt-5">
+            <h2 class="text-xl font-bold">Prediction Result:</h2>
+            <p>Name: {{ name }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Age: {{ age }}</p>
+            <p>Predicted Value: {{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
