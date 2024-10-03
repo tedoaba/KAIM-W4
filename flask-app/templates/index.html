@@ -4,169 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
-    <title>Input Form</title>
+    <title>Prediction Form</title>
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto py-10">
-        <h1 class="text-2xl font-bold text-center mb-5">Enter Store Details</h1>
-        <form action="/" method="POST" class="max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg">
-            
-            <!-- Store -->
+        <h1 class="text-2xl font-bold text-center mb-5">Sales Prediction Form</h1>
+        
+        <form action="/" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
-                <label for="store" class="block text-gray-700 text-sm font-bold mb-2">Store:</label>
-                <input type="number" id="store" name="store" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Store" class="block text-gray-700 text-sm font-bold mb-2">Store:</label>
+                <input type="number" name="Store" id="Store" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-            
-            <!-- DayOfWeek -->
             <div class="mb-4">
-                <label for="dayofweek" class="block text-gray-700 text-sm font-bold mb-2">Day of Week:</label>
-                <input type="number" id="dayofweek" name="dayofweek" min="1" max="7" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="DayOfWeek" class="block text-gray-700 text-sm font-bold mb-2">Day of Week:</label>
+                <input type="number" name="DayOfWeek" id="DayOfWeek" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Customers -->
             <div class="mb-4">
-                <label for="customers" class="block text-gray-700 text-sm font-bold mb-2">Customers:</label>
-                <input type="number" id="customers" name="customers" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Customers" class="block text-gray-700 text-sm font-bold mb-2">Customers:</label>
+                <input type="number" name="Customers" id="Customers" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Open -->
             <div class="mb-4">
-                <label for="open" class="block text-gray-700 text-sm font-bold mb-2">Open (1=Open, 0=Closed):</label>
-                <input type="number" id="open" name="open" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Open" class="block text-gray-700 text-sm font-bold mb-2">Open Store (0 or 1):</label>
+                <input type="number" name="Open" id="Open" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Promo -->
             <div class="mb-4">
-                <label for="promo" class="block text-gray-700 text-sm font-bold mb-2">Promo (1=Yes, 0=No):</label>
-                <input type="number" id="promo" name="promo" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Promo" class="block text-gray-700 text-sm font-bold mb-2">Promo (0 or 1):</label>
+                <input type="number" name="Promo" id="Promo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- StateHoliday -->
             <div class="mb-4">
-                <label for="stateholiday" class="block text-gray-700 text-sm font-bold mb-2">State Holiday (0=None, a=Public Holiday, b=Easter Holiday, c=Christmas):</label>
-                <input type="text" id="stateholiday" name="stateholiday" maxlength="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="StateHoliday" class="block text-gray-700 text-sm font-bold mb-2">State Holiday (0, 1, or 2):</label>
+                <input type="number" name="StateHoliday" id="StateHoliday" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- SchoolHoliday -->
             <div class="mb-4">
-                <label for="schoolholiday" class="block text-gray-700 text-sm font-bold mb-2">School Holiday (1=Yes, 0=No):</label>
-                <input type="number" id="schoolholiday" name="schoolholiday" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="SchoolHoliday" class="block text-gray-700 text-sm font-bold mb-2">School Holiday (0 or 1):</label>
+                <input type="number" name="SchoolHoliday" id="SchoolHoliday" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- StoreType -->
             <div class="mb-4">
-                <label for="storetype" class="block text-gray-700 text-sm font-bold mb-2">Store Type (a, b, c, d):</label>
-                <input type="text" id="storetype" name="storetype" maxlength="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="StoreType" class="block text-gray-700 text-sm font-bold mb-2">Store Type:</label>
+                <input type="number" name="StoreType" id="StoreType" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Assortment -->
             <div class="mb-4">
-                <label for="assortment" class="block text-gray-700 text-sm font-bold mb-2">Assortment (a=Basic, b=Extra, c=Extended):</label>
-                <input type="text" id="assortment" name="assortment" maxlength="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Assortment" class="block text-gray-700 text-sm font-bold mb-2">Assortment:</label>
+                <input type="number" name="Assortment" id="Assortment" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- CompetitionDistance -->
             <div class="mb-4">
-                <label for="competitiondistance" class="block text-gray-700 text-sm font-bold mb-2">Competition Distance (in meters):</label>
-                <input type="number" id="competitiondistance" name="competitiondistance" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="CompetitionDistance" class="block text-gray-700 text-sm font-bold mb-2">Competition Distance:</label>
+                <input type="number" name="CompetitionDistance" id="CompetitionDistance" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- CompetitionOpenSinceMonth -->
             <div class="mb-4">
-                <label for="competitionopensincemonth" class="block text-gray-700 text-sm font-bold mb-2">Competition Open Since Month:</label>
-                <input type="number" id="competitionopensincemonth" name="competitionopensincemonth" min="1" max="12" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="CompetitionOpenSinceMonth" class="block text-gray-700 text-sm font-bold mb-2">Competition Open Since Month:</label>
+                <input type="number" name="CompetitionOpenSinceMonth" id="CompetitionOpenSinceMonth" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- CompetitionOpenSinceYear -->
             <div class="mb-4">
-                <label for="competitionopensinceyear" class="block text-gray-700 text-sm font-bold mb-2">Competition Open Since Year:</label>
-                <input type="number" id="competitionopensinceyear" name="competitionopensinceyear" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="CompetitionOpenSinceYear" class="block text-gray-700 text-sm font-bold mb-2">Competition Open Since Year:</label>
+                <input type="number" name="CompetitionOpenSinceYear" id="CompetitionOpenSinceYear" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Promo2 -->
             <div class="mb-4">
-                <label for="promo2" class="block text-gray-700 text-sm font-bold mb-2">Promo2 (1=Yes, 0=No):</label>
-                <input type="number" id="promo2" name="promo2" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Promo2" class="block text-gray-700 text-sm font-bold mb-2">Promo2 (0 or 1):</label>
+                <input type="number" name="Promo2" id="Promo2" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Promo2SinceWeek -->
             <div class="mb-4">
-                <label for="promo2sinceweek" class="block text-gray-700 text-sm font-bold mb-2">Promo2 Since Week:</label>
-                <input type="number" id="promo2sinceweek" name="promo2sinceweek" min="1" max="52" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Promo2SinceWeek" class="block text-gray-700 text-sm font-bold mb-2">Promo2 Since Week:</label>
+                <input type="number" name="Promo2SinceWeek" id="Promo2SinceWeek" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Promo2SinceYear -->
             <div class="mb-4">
-                <label for="promo2sinceyear" class="block text-gray-700 text-sm font-bold mb-2">Promo2 Since Year:</label>
-                <input type="number" id="promo2sinceyear" name="promo2sinceyear" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Promo2SinceYear" class="block text-gray-700 text-sm font-bold mb-2">Promo2 Since Year:</label>
+                <input type="number" name="Promo2SinceYear" id="Promo2SinceYear" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- PromoInterval -->
             <div class="mb-4">
-                <label for="promointerval" class="block text-gray-700 text-sm font-bold mb-2">Promo Interval (e.g., Jan, Apr, Jul, Oct):</label>
-                <input type="text" id="promointerval" name="promointerval" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="PromoInterval" class="block text-gray-700 text-sm font-bold mb-2">Promo Interval:</label>
+                <input type="number" name="PromoInterval" id="PromoInterval" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Day -->
             <div class="mb-4">
-                <label for="day" class="block text-gray-700 text-sm font-bold mb-2">Day:</label>
-                <input type="number" id="day" name="day" min="1" max="31" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Day" class="block text-gray-700 text-sm font-bold mb-2">Day:</label>
+                <input type="number" name="Day" id="Day" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- WeekOfYear -->
             <div class="mb-4">
-                <label for="weekofyear" class="block text-gray-700 text-sm font-bold mb-2">Week of Year:</label>
-                <input type="number" id="weekofyear" name="weekofyear" min="1" max="52" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="WeekOfYear" class="block text-gray-700 text-sm font-bold mb-2">Week of Year:</label>
+                <input type="number" name="WeekOfYear" id="WeekOfYear" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Month -->
             <div class="mb-4">
-                <label for="month" class="block text-gray-700 text-sm font-bold mb-2">Month:</label>
-                <input type="number" id="month" name="month" min="1" max="12" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Month" class="block text-gray-700 text-sm font-bold mb-2">Month:</label>
+                <input type="number" name="Month" id="Month" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Year -->
             <div class="mb-4">
-                <label for="year" class="block text-gray-700 text-sm font-bold mb-2">Year:</label>
-                <input type="number" id="year" name="year" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="Year" class="block text-gray-700 text-sm font-bold mb-2">Year:</label>
+                <input type="number" name="Year" id="Year" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- IsWeekend -->
             <div class="mb-4">
-                <label for="isweekend" class="block text-gray-700 text-sm font-bold mb-2">Is Weekend (1=Yes, 0=No):</label>
-                <input type="number" id="isweekend" name="isweekend" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="IsWeekend" class="block text-gray-700 text-sm font-bold mb-2">Is Weekend (0 or 1):</label>
+                <input type="number" name="IsWeekend" id="IsWeekend" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- IsBeginningOfMonth -->
             <div class="mb-4">
-                <label for="isbeginningofmonth" class="block text-gray-700 text-sm font-bold mb-2">Is Beginning of Month (1=Yes, 0=No):</label>
-                <input type="number" id="isbeginningofmonth" name="isbeginningofmonth" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="IsBeginningOfMonth" class="block text-gray-700 text-sm font-bold mb-2">Is Beginning of Month (0 or 1):</label>
+                <input type="number" name="IsBeginningOfMonth" id="IsBeginningOfMonth" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- IsMidMonth -->
             <div class="mb-4">
-                <label for="ismidmonth" class="block text-gray-700 text-sm font-bold mb-2">Is Mid Month (1=Yes, 0=No):</label>
-                <input type="number" id="ismidmonth" name="ismidmonth" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="IsMidMonth" class="block text-gray-700 text-sm font-bold mb-2">Is Mid Month (0 or 1):</label>
+                <input type="number" name="IsMidMonth" id="IsMidMonth" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- IsEndOfMonth -->
             <div class="mb-4">
-                <label for="isendofmonth" class="block text-gray-700 text-sm font-bold mb-2">Is End of Month (1=Yes, 0=No):</label>
-                <input type="number" id="isendofmonth" name="isendofmonth" min="0" max="1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label for="IsEndOfMonth" class="block text-gray-700 text-sm font-bold mb-2">Is End of Month (0 or 1):</label>
+                <input type="number" name="IsEndOfMonth" id="IsEndOfMonth" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight">
             </div>
-
-            <!-- Submit Button -->
             <div class="flex items-center justify-between">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Submit
+                </button>
             </div>
         </form>
-
-        <!-- Display Prediction Result -->
-        {% if prediction is not none %}
-        <div class="mt-5">
-            <h2 class="text-xl font-bold">Prediction Result:</h2>
-            <p>Store: {{ store }}</p>
-            <p>Sales Prediction: {{ prediction }}</p>
+        
+        {% if prediction %}
+        <div class="mt-5 p-4 bg-green-200 rounded">
+            <h2 class="text-lg font-bold">Prediction Results:</h2>
+            <p>Predicted Sales: {{ prediction }}</p>
         </div>
         {% endif %}
     </div>
