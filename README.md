@@ -108,6 +108,17 @@ python -m unittest discover
 
 ![Sales on Holidays](outputs/sales_on_state_holidays.png)
 
+### Flask App Screenshots
+
+#### Sales Prediction Form
+
+![Sales Prediction Form](../KAIM-W4/assets/form-1.png)
+![Sales Prediction Form](../KAIM-W4/assets/form-2.png)
+
+#### Prediction Result
+
+![Result](../KAIM-W4//assets//result-1.png)
+
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
