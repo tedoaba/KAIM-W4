@@ -112,12 +112,12 @@ python -m unittest discover
 
 #### Sales Prediction Form
 
-![Sales Prediction Form](../KAIM-W4/assets/form-1.png)
-![Sales Prediction Form](../KAIM-W4/assets/form-2.png)
+![Sales Prediction Form](assets/form-1.png)
+![Sales Prediction Form](assets/form-2.png)
 
 #### Prediction Result
 
-![Result](../KAIM-W4//assets//result-1.png)
+![Result](assets//result-1.png)
 
 ## Contributing
 
