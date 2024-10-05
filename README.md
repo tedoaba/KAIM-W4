@@ -117,7 +117,7 @@ python -m unittest discover
 
 #### Prediction Result
 
-![Result](../KAIM-W4//assets//result-1.png)
+![Result](assets//result-1.png)
 
 ## Contributing
 
